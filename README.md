@@ -3,3 +3,15 @@ Foi publicado no Kaggle (https://www.kaggle.com/datasets/muratkokludataset/date-
 
 ## Random Forest
 ![alt text](https://miro.medium.com/max/1400/1*hmtbIgxoflflJqMJ_UHwXw.jpeg)
+
+## SVM
+![alt text](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_svc_001.png)
+
+## KNN
+![alt text](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1531424125/KNN_final1_ibdm8a.png)
+
+## Regressão Logística
+![alt text](https://ainewgeneration.com/wp-content/uploads/2021/08/logistic-regression-example.jpg)
+
+## Redes Neurais
+![alt text](https://1.cms.s81c.com/sites/default/files/2021-01-06/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork-WHITEBG.png)
