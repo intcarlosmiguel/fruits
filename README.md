@@ -14,4 +14,4 @@ Foi publicado no Kaggle (https://www.kaggle.com/datasets/muratkokludataset/date-
 ![alt text](https://ainewgeneration.com/wp-content/uploads/2021/08/logistic-regression-example.jpg)
 
 ## Redes Neurais
-![alt text](https://1.cms.s81c.com/sites/default/files/2021-01-06/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork-WHITEBG.png)
+![alt text](https://www.romsoc.eu/wp-content/uploads/image.png)
