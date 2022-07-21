@@ -62,7 +62,7 @@ def createClassifier(X,Y):
             'max_iter' : [5000],
             'hidden_layer_sizes' : [(i,i) for i in range(30,41)]
         }
-        bestClassfier(X,Y,parametros,MLPClassifier,'neural.sav')
+        bestClassfier(X,Y,parametros,MLPClassifier,'./models/neural.sav')
     if(not exists('SVM.sav')):
         print('Carregando SVM..........')
         parametros = {
@@ -70,7 +70,7 @@ def createClassifier(X,Y):
             'C': [(i/10)for i in range(1,41)],
             'tol': [(1/10**i)for i in range(6)]
         }
-        bestClassfier(X,Y,parametros,SVC,'SVM.sav')
+        bestClassfier(X,Y,parametros,SVC,'./models/SVM.sav')
     if(not exists('Randomforest.sav')):
         print('Carregando Random Forest..........')
         parametros = {
@@ -79,7 +79,7 @@ def createClassifier(X,Y):
             'min_samples_split': [(i)for i in range(4,12,2)],
             'min_samples_leaf': [(i)for i in range(3,12,2)]
         }
-        bestClassfier(X,Y,parametros,RandomForestClassifier,'Randomforest.sav')
+        bestClassfier(X,Y,parametros,RandomForestClassifier,'./models/Randomforest.sav')
     if(not exists('Logistic.sav')):
         print('Carregando Regressão Logística..........')
         parametros = {
@@ -88,7 +88,7 @@ def createClassifier(X,Y):
             'solver' : ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
             'max_iter' : [7000]
         }
-        bestClassfier(X,Y,parametros,LogisticRegression,'Logistic.sav')
+        bestClassfier(X,Y,parametros,LogisticRegression,'./models/Logistic.sav')
     if(not exists('neighbors.sav')):
         print('Carregando KNN..........')
         parametros = {
@@ -97,9 +97,9 @@ def createClassifier(X,Y):
             'algorithm' : ['auto', 'ball_tree', 'kd_tree', 'brute'],
             'p' : [1,2]
         }
-        bestClassfier(X,Y,parametros,KNeighborsClassifier,'neighbors.sav')
+        bestClassfier(X,Y,parametros,KNeighborsClassifier,'./models/neighbors.sav')
     print('Modelos Carregados!')
-    return pickle.load(open('neural.sav','rb')),pickle.load(open('SVM.sav','rb')),pickle.load(open('Randomforest.sav','rb')),pickle.load(open('Logistic.sav','rb')),pickle.load(open('neighbors.sav','rb'))
+    return pickle.load(open('./models/neural.sav','rb')),pickle.load(open('./models/SVM.sav','rb')),pickle.load(open('./models/Randomforest.sav','rb')),pickle.load(open('./models/Logistic.sav','rb')),pickle.load(open('./models/neighbors.sav','rb'))
 
 def bestClassfier(X,Y,parameters,classfier,namefile):
     grid = GridSearchCV(estimator = classfier(),param_grid=parameters)
@@ -175,7 +175,7 @@ def TorchNN(R_treino,R_teste,epocas,labels,file):
         acc = acertos_validacao/teste_tamanho
         #print(f'Ep: {epoca + 1}, Erro treino: {err:.5f}, Acc treino: {acc_:.5f}, Acc valid: {acc:.5f}')
     model_scripted = torch.jit.script(modelo_)
-    model_scripted.save('NNtorch.pt')
+    model_scripted.save('./img/NNtorch.pt')
     predicoes = predicoes.numpy()
     y_real = y_real.numpy()
     acc = CM(y_real,predicoes,labels,file)
